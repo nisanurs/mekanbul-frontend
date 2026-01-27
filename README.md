@@ -132,4 +132,4 @@ src/
 
 ## Geliştirici
 
-Asım Sinan Yüksel - 2025
+Nisanur Sütçü
