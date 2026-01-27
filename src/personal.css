@@ -1,0 +1,59 @@
+
+/* Genel Sayfa Arka Planı */
+body {
+    background-color: #f4eded !important;
+    font-family: 'Inter', sans-serif !important; 
+}
+
+
+.list-group-item {
+    background-color: #f4cece !important;    
+    border-radius: 10px !important; 
+    margin-bottom: 20px !important;
+    padding: 20px !important;
+    box-shadow: 9px 5px 12px rgba(44, 20, 20, 0.05) !important; 
+    transition: all 0.6s ease !important; /
+}
+
+.page-header h2 {
+    color: #00171d !important; 
+    font-weight: 700 !important; 
+}
+
+#arama{
+    background-color:#f2f1f1
+}
+
+.list-group-item:hover {
+    transform: translateY(-5px); /* Hafifçe yukarı kalksın */
+    box-shadow: 0 8px 24px rgba(129, 25, 25, 0.12) !important; 
+}
+
+/* Mekan İsmi (Link) Stilini Değiştir */
+.list-group-item h4 a {
+    color: #00171d !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+}
+
+.badge-default {
+    background-color: #842222 !important; 
+    padding: 8px 12px !important;
+    border-radius: 5px !important;
+    font-size: 12px !important;
+}
+
+.glyphicon-star:hover {
+    color: #ffb400 !important; 
+    transition: 0.4s !important;
+}
+
+.star-rating .on {
+  color: #ffc107; /* Altın sarısı */
+}
+.star-rating .off {
+  color: #ccc; /* Gri */
+}
+.star {
+    transition: color 200ms;
+}
