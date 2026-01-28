@@ -6,7 +6,7 @@ import React from "react";
 import { formatDistance } from "../services/Utils"; // Mesafe formatlama fonksiyonu
 
 // Tek bir mekan kartı bileşeni - Mekan bilgilerini gösterir
-const Venue = ({venue}) => {
+const Venue = ({ venue }) => {
   return (
     <div className="list-group">
       <div className="col-xs-12 col-sm-12">
@@ -14,19 +14,19 @@ const Venue = ({venue}) => {
           {/* Mekan adı ve puanlama */}
           <h4>
             {/* Tıklanabilir mekan adı - Detay sayfasına yönlendirir */}
-            <NavLink to={`/venue/${venue.id}`}>{venue.name} </NavLink>
+            <NavLink to={"/venue/" + venue._id}>{venue.name}</NavLink>
             {/* Yıldız puanlama göster */}
             <Rating rating={venue.rating} />
           </h4>
-          
+
           {/* Mesafe bilgisi (sağ üst köşede) */}
           <span className="span badge pull-right badge-default">
             {formatDistance(venue.distance)}
           </span>
-          
+
           {/* Mekan adresi */}
           <p className="address"> {venue.address}</p>
-          
+
           {/* Yiyecek ve içecek listesi */}
           <FoodAndDrinkList foodAndDrinkList={venue.foodanddrink} />
         </div>
