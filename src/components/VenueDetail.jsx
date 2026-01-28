@@ -8,31 +8,37 @@ import CommentList from "./CommentList"; // Yorum listesi bileşeni
 import React from "react";
 import { useParams } from "react-router-dom"; // URL parametrelerini almak için
 import venuesData from "../data/venues.json"; // Mekan verileri (JSON dosyasından)
+import React, { useState, useEffect } from "react";
+import VenueDataService from "../services/VenueDataService"; // API servis dosyan
 
 // Mekan detay sayfası bileşeni - Seçilen mekanın tüm bilgilerini gösterir
 const VenueDetail = () => {
-  // URL'den mekan ID'sini al (örn: /venue/123 -> id = "123")
+  const [venue, setVenue] = useState(null); // Başta mekan yok
   const { id } = useParams();
-  
-  // Tüm mekanlar dizisi JSON dosyasından alınır (Home.jsx ile aynı kaynak)
-  // Bu sayede veriler tek bir yerde tutulur ve değişiklikler kolaylaşır
-  // Normalde bu veriler API'den veya Redux store'dan gelecek
-  const allVenues = venuesData;
-  
-  // URL'den gelen id'ye göre mekanı bul
-  // id string olarak gelir, bu yüzden Number() ile sayıya çeviriyoruz
-  const venue = allVenues.find(v => v.id === Number(id)) || allVenues[0];
-  
-  // Eğer mekan bulunamazsa hata mesajı göster
+
+  useEffect(() => {
+    // Sayfa açıldığında Render'daki backend'e git ve bu ID'li mekanı getir
+    VenueDataService.getVenue(id)
+      .then((response) => {
+        setVenue(response.data); // Veri gelince state'i güncelle
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, [id]);
+
+  // Veri henüz gelmediyse yükleniyor yazısı göster
   if (!venue) {
-    return <div>Mekan bulunamadı!</div>;
+    return <div className="container">Mekan yükleniyor...</div>;
   }
-  
+
+  // ... geri kalan return (HTML) kısmı aynı kalabilir
+
   return (
     <div>
       {/* Sayfa başlığı - Mekan adını göster */}
       <Header headerText={venue.name} />
-      
+
       {/* Bootstrap container - İçeriği ortalar ve genişliği sınırlar */}
       <div className="container">
         {/* Bootstrap row - Yatay satır oluşturur */}
@@ -47,10 +53,10 @@ const VenueDetail = () => {
                 <p className="rating">
                   <Rating rating={venue.rating} />
                 </p>
-                
+
                 {/* Mekan adresi */}
                 <p>{venue.address}</p>
-                
+
                 {/* Açılış saatleri paneli */}
                 {/* Bootstrap panel: panel-primary (mavi renk teması) */}
                 <div className="panel panel-primary">
@@ -65,7 +71,7 @@ const VenueDetail = () => {
                     <HourList hourList={venue.hours || []} />
                   </div>
                 </div>
-                
+
                 {/* Yiyecek/içecek paneli */}
                 <div className="panel panel-primary">
                   <div className="panel-heading ">
@@ -77,7 +83,7 @@ const VenueDetail = () => {
                   </div>
                 </div>
               </div>
-              
+
               {/* Sağ kolon - Harita */}
               {/* Bootstrap grid: col-xs-12 (mobilde tam genişlik), col-sm-6 (küçük ekranda yarım genişlik) */}
               <div className="col-xs-12 col-sm-6">
@@ -93,18 +99,16 @@ const VenueDetail = () => {
                     <img
                       className="img img-responsive img-rounded"
                       alt="Konum Bilgisi"
-                      src={`https://maps.googleapis.com/maps/api/staticmap?center=${
-                        venue.coordinates
-                      }&zoom=12&size=600x400&markers=${
-                        venue.coordinates
-                      }&key=AIzaSyCmmKygTpBzHGOZEciJpAdxC9v_tWHagnE`}
+                      src={`https://maps.googleapis.com/maps/api/staticmap?center=${venue.coordinates
+                        }&zoom=12&size=600x400&markers=${venue.coordinates
+                        }&key=AIzaSyCmmKygTpBzHGOZEciJpAdxC9v_tWHagnE`}
                     />
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          
+
           {/* Yorumlar bölümü */}
           <div className="row">
             {/* Bootstrap grid: col-xs-12 (mobilde tam genişlik) */}
