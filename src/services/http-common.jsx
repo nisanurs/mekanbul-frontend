@@ -5,7 +5,7 @@ import axios from "axios";
 // Axios instance oluştur - Tüm API istekleri için ortak yapılandırma
 // Bu instance, her API çağrısında tekrar tekrar yapılandırma yapmamızı önler
 export default axios.create({
-  baseURL: "https://mekanbul-backend.onrender.com",
+  baseURL: "https://mekanbul-backend.onrender.com/api",
   headers: {
     "Content-type": "application/json"
   }
