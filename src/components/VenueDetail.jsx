@@ -1,16 +1,11 @@
-// Gerekli bileşenleri ve kütüphaneleri içe aktar
-import { NavLink } from "react-router-dom"; // Sayfa yönlendirme için link bileşeni
-import Rating from "./Rating"; // Yıldız puanlama bileşeni
-import FoodAndDrinkList from "./FoodAndDrinkList"; // Yiyecek/içecek listesi bileşeni
-import Header from "./Header"; // Sayfa başlığı bileşeni
-import HourList from "./HourList"; // Çalışma saatleri listesi bileşeni
-import CommentList from "./CommentList"; // Yorum listesi bileşeni
-import React from "react";
-import { useParams } from "react-router-dom"; // URL parametrelerini almak için
-import venuesData from "../data/venues.json"; // Mekan verileri (JSON dosyasından)
 import React, { useState, useEffect } from "react";
-import VenueDataService from "../services/VenueDataService"; // API servis dosyan
-
+import { useParams, NavLink } from "react-router-dom"; 
+import Rating from "./Rating";
+import FoodAndDrinkList from "./FoodAndDrinkList";
+import Header from "./Header";
+import HourList from "./HourList";
+import CommentList from "./CommentList";
+import VenueDataService from "../services/VenueDataService"; 
 // Mekan detay sayfası bileşeni - Seçilen mekanın tüm bilgilerini gösterir
 const VenueDetail = () => {
   const [venue, setVenue] = useState(null); // Başta mekan yok

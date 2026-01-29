@@ -1,13 +1,13 @@
 
 /* Genel Sayfa Arka Planı */
 body {
-    background-color: #f4eded !important;
+    background-color: #ede8e8 !important;
     font-family: 'Inter', sans-serif !important; 
 }
 
 
 .list-group-item {
-    background-color: #f4cece !important;    
+    background-color: #ebcfcf !important;    
     border-radius: 10px !important; 
     margin-bottom: 20px !important;
     padding: 20px !important;
@@ -37,7 +37,7 @@ body {
 }
 
 .badge-default {
-    background-color: #842222 !important; 
+    background-color: #ac5656 !important; 
     padding: 8px 12px !important;
     border-radius: 5px !important;
     font-size: 12px !important;
@@ -56,4 +56,30 @@ body {
 }
 .star {
     transition: color 200ms;
+}
+
+/* Navbar Arka Planı */
+.navbar-default {
+    background-color: #631a4b !important; /* Havalı bir mor tonu */
+    border-color: #876abd !important;
+    transition: all 0.3s ease; /* Renk geçişi yumuşak olsun */
+}
+
+/* Navbar Logo ve Yazı Rengi */
+.navbar-default .navbar-brand, 
+.navbar-default .navbar-nav > li > a {
+    color: #ffffff !important;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Üzerine gelince (Hover) Parlasın */
+.navbar-default .navbar-nav > li > a:hover {
+    color: #ffffff !important; /* Altın sarısı parlama */
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Sayfanın genel arka planı çok beyaz kalmasın dersen: */
+body {
+    background-color: #f8f9fa;
 }
