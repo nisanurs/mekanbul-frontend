@@ -1,32 +1,29 @@
-
 /* Genel Sayfa Arka Planı */
 body {
     background-color: #ede8e8 !important;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif!important; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
 }
 
 
 .list-group-item {
-    background-color: #631a4b31 
-    !important;    
-    border-radius: 10px !important; 
+    background-color: #631a4b31 !important;
+    border-radius: 10px !important;
     margin-bottom: 20px !important;
     padding: 20px !important;
-    box-shadow:60px px 12px rgba(44, 20, 20, 0.05) !important; 
-    transition: all 0.6s ease !important; /
+    box-shadow: 12px 12px 12px rgba(44, 20, 20, 0.05) !important;
+    transition: all 0.6s ease !important;/
 }
 
 
-#arama{
-    background-color:#ffffff07
+#arama {
+    background-color: #ffffff07
 }
 
 .list-group-item:hover {
-    transform: translateY(-3px); 
-    box-shadow: 900px 8px 94px rgba(129, 25, 25, 0.12) !important; 
+    transform: translateY(-3px);
+    box-shadow: 900px 8px 94px rgba(129, 25, 25, 0.12) !important;
 }
 
-/* Mekan İsmi (Link) Stilini Değiştir */
 .list-group-item h4 a {
     color: #00171d !important;
     font-weight: 600 !important;
@@ -37,70 +34,72 @@ body {
     position: absolute;
     right: 8px;
     top: 50%;
-    transform: translateY(-50%); /* Kendi yüksekliğinin yarısı kadar yukarı çekip tam ortalar */
-    background-color: #631a4b  !important; 
+    transform: translateY(-50%);
+    /* Kendi yüksekliğinin yarısı kadar yukarı çekip tam ortalar */
+    background-color: #631a4b !important;
     padding: 8px 12px !important;
     border-radius: 5px !important;
     font-size: 12px !important;
 }
 
 .glyphicon-star:hover {
-    color: #ffb400 !important; 
+    color: #ffb400 !important;
     transition: 0.4s !important;
 }
 
 .star-rating .on {
-  color: #ffc107; /* Altın sarısı */
+    color: #ffc107;
 }
+
 .star-rating .off {
-  color: #ccc; /* Gri */
+    color: #ccc;
 }
 
 .star {
     transition: color 200ms;
 }
 
-/* Navbar Arka Planı */
+
 .navbar-default {
-    background-color: #631a4b !important; 
+    background-color: #631a4b !important;
     border-color: #631a4b44 !important;
-    transition: all 0.3s ease; /* Renk geçişi yumuşak olsun */
+    transition: all 0.3s ease;
 }
 
 
-.navbar-default .navbar-brand, 
-.navbar-default .navbar-nav > li > a {
+.navbar-default .navbar-brand,
+.navbar-default .navbar-nav>li>a {
     color: #ffffff !important;
     font-weight: 400;
     letter-spacing: 0.3px;
 }
 
-/* Üzerine gelince (Hover) Parlasın */
-.navbar-default .navbar-nav > li > a:hover {
-    color: #ffffff !important; /* Altın sarısı parlama */
+.navbar-default .navbar-nav>li>a:hover {
+    color: #ffffff !important;
     background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
-/* Sayfanın genel arka planı çok beyaz kalmasın dersen: */
+
 body {
     background-color: #f8f9fa;
 }
 
 /* Aktif olan ve üzerine gelinen menü elemanlarının arka planını değiştirir */
-.navbar-default .navbar-nav > .active > a, 
-.navbar-default .navbar-nav > .active > a:hover, 
-.navbar-default .navbar-nav > .active > a:focus,
-.navbar-default .navbar-nav > li > a:hover {
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>li>a:hover {
     background-color: #4b1339 !important;
-    color: #ffffff !important;           
+    color: #ffffff !important;
 }
+
 .navbar-default .navbar-brand {
-    background-color: transparent !important; /* Eğer marka isminin arkası kırmızıysa */
+    background-color: transparent !important;
     color: white !important;
 }
-/* Aktif sayfa butonunun fardan çekildikten sonraki (normal) hali */
-.navbar-default .navbar-nav > .active > a, 
-.navbar-default .navbar-nav > .active > a:focus {
-    background-color: #631a4b !important; /* Kırmızı yerine senin mor tonun */
-    color: #ffffff !important;           /* Yazı rengi beyaz */
+
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:focus {
+    background-color: #631a4b !important;
+    color: #ffffff !important;
 }
